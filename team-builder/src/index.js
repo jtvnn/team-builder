@@ -46,9 +46,38 @@ function Form() {
       })
     }
       <form onSubmit={submit}>
-        <input name='name' type="text" value={formValues.name} onChange={change} />
-        <input name='email' type="email" value={formValues.email} onChange={change} />
-        <input name='role' type="text" value={formValues.role} onChange={change} />
+        <label>Name: 
+          {
+            <input 
+            name='name' 
+            type="text" 
+            value={formValues.name} 
+            onChange={change}
+            placeholder='type a name'
+            maxLength='30' 
+            />
+          }
+        </label>
+
+        <label>Email: 
+        <input 
+        name='email' 
+        type="email" 
+        value={formValues.email} 
+        onChange={change} 
+        placeholder='type an email'
+        maxLength='30'
+        />
+        </label>
+        
+        <label>Role:
+        <select name='role' value={formValues.role} onChange={change}>
+            <option value=''>--select role --</option>
+            <option value='backend_developer'>Backend Developer</option>
+            <option value='frontend_developer'>Frontend Developer</option>
+            <option value='frontend_designer'>Frontend Designer</option>
+        </select>
+        </label>
 
         <button>submit</button>
       </form>
